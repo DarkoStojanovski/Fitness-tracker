@@ -12,7 +12,7 @@ app.use(express.urlencoded({extended: false}));
 //static folder
 app.use(express.static(path.join(__dirname, 'public')));
 
-var mongoUrl = process.env.MONGO_DB || "mongodb://localhost/fitnesstracker"
+var mongoUrl = process.env.MONGODB_URI || "mongodb://localhost/fitnesstracker"
 mongoose.connect(mongoUrl, {useNewUrlParser: true, useFindAndModify: false});
 
 app.use(require("./controlers/views"));
