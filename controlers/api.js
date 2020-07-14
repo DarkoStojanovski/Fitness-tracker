@@ -11,7 +11,7 @@ router.get("/api/workouts", (req, res) => {
     .catch(error => {res.json(error)
     })
 })
-router.get("/api/workouts/range", (req,res) {
+router.get("/api/workouts/range", (req,res) => {
     Workout.find({}).limit(20)
     .then ( exercises => {
         res.json(exercises);
